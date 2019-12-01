@@ -17,6 +17,7 @@ FLV, MOV, OGV, and also extract the audio to a file with MP3 format.
 BuildRequires:  python3-devel
 BuildRequires:  python3-rpm-macros
 BuildRequires:	python3-qt5-devel
+BuildRequires:	ffmpeg
 BuildRequires:	ffmpeg-devel
 Requires:	ffmpeg
 

@@ -1,6 +1,6 @@
 Name:           videomorph
 Version:        1.4.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Small GUI wrapper for FFMPEG based on PyQt5
 License:        ASL 2.0
 URL:            https://github.com/videomorph-dev/videomorph
@@ -14,7 +14,11 @@ currently more popular video formats, like MPG, MP4, AVI, WEBM, DVD, VCD,
 FLV, MOV, OGV, and also extract the audio to a file with MP3 format.
 
 
+%if 0%{?fedora} >= 33
+BuildRequires:  python3.9-devel
+%else
 BuildRequires:  python3-devel
+%endif
 BuildRequires:  python3-rpm-macros
 BuildRequires:	python3-qt5-devel
 BuildRequires:	ffmpeg
@@ -48,6 +52,9 @@ find -type f -exec sed -iE '1s=^#! */usr/bin/\(python\|env python\)[23]\?=#!%{__
 
 
 %changelog
+
+* Tue Jun 02 2020 Unitedrpms Project <unitedrpms AT protonmail DOT com> 1.4.1-2
+- Rebuilt for python3.9
 
 * Sat Nov 30 2019 Unitedrpms Project <unitedrpms AT protonmail DOT com> 1.4.1-1
 - Initial build

@@ -31,11 +31,10 @@ find -type f -exec sed -iE '1s=^#! */usr/bin/\(python\|env python\)[23]\?=#!%{__
 
 
 %build
-
-python%{python3_version} setup.py build
+%py3_build
 
 %install
-python%{python3_version} setup.py install --root=%{buildroot} --optimize=1 --skip-build
+%py3_install
 
 %files 
 
